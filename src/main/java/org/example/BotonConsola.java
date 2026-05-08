@@ -1,17 +1,31 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.control.Button;
+
+import java.awt.*;
+
+public class BotonConsola extends Application {
+    public void start(Stage stage){
+        Button boton = new Button("Boton");
+
+        boton.setOnAction(e -> {
+            System.out.println("Boton pulsado");
+        });
+
+        VBox layout = new VBox(10, boton);
+
+        Scene scene = new Scene(layout, 300, 200);
+        stage.setScene(scene);
+        stage.setTitle("BotonConsola");
+        stage.show();
+
+    }
+    public static void main(String[] args) {
+        launch();
     }
 }
